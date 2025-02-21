@@ -1,3 +1,11 @@
+/* Add theme colors at the top of the file */
+:root {
+    --theme-blue: #007bff;
+    --theme-blue-dark: #0056b3;
+    --theme-purple: #9c27b0;
+    --theme-purple-dark: #7b1fa2;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -822,7 +830,7 @@ section#experience {
 }
 
 /* Remove background from education section */
-section#about {
+section#education {
     background: transparent;
     box-shadow: none;
     border-radius: 0;
@@ -1265,5 +1273,172 @@ section#skills {
 
     .mobile-menu-btn.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Theme-specific styles */
+.theme-blue .logo,
+.theme-blue .nav-links a:hover,
+.theme-blue .company,
+.theme-blue .degree,
+.theme-blue .logo-placeholder,
+.theme-blue .experience-item li:before,
+.theme-blue .education-text p:first-of-type,
+.theme-blue .tool-card .category,
+.theme-blue .contact-email a,
+.theme-blue .contact-phone a {
+    color: var(--theme-blue);
+}
+
+.theme-blue button {
+    background: var(--theme-blue);
+}
+
+.theme-blue button:hover {
+    background: var(--theme-blue-dark);
+}
+
+.theme-blue .school-logo {
+    background: var(--theme-blue);
+    border-color: var(--theme-blue);
+}
+
+.theme-blue .experience-item::before,
+.theme-blue .education-item::before,
+.theme-blue .skills-item::before {
+    background: var(--theme-blue);
+}
+
+.theme-purple .logo,
+.theme-purple .nav-links a:hover,
+.theme-purple .company,
+.theme-purple .degree,
+.theme-purple .logo-placeholder,
+.theme-purple .experience-item li:before,
+.theme-purple .education-text p:first-of-type,
+.theme-purple .tool-card .category,
+.theme-purple .contact-email a,
+.theme-purple .contact-phone a {
+    color: var(--theme-purple);
+}
+
+.theme-purple button {
+    background: var(--theme-purple);
+}
+
+.theme-purple button:hover {
+    background: var(--theme-purple-dark);
+}
+
+.theme-purple .school-logo {
+    background: var(--theme-purple);
+    border-color: var(--theme-purple);
+}
+
+.theme-purple .experience-item::before,
+.theme-purple .education-item::before,
+.theme-purple .skills-item::before {
+    background: var(--theme-purple);
+}
+
+/* Update any hardcoded #007bff colors */
+.theme-purple .contact-email a:hover,
+.theme-purple .contact-phone a:hover {
+    color: var(--theme-purple-dark);
+}
+
+.theme-purple .project-link {
+    color: var(--theme-purple);
+}
+
+.theme-purple .project-link:hover {
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+}
+
+.theme-purple button:hover {
+    box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+}
+
+.theme-purple .skill-category h4 {
+    color: var(--theme-purple);
+}
+
+.theme-purple .skill-category li::before {
+    color: var(--theme-purple);
+}
+
+/* Remove background from licenses section */
+section#licenses {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Style certification items like education items */
+.certifications-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.certification-item {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--theme-purple);
+    border-radius: 4px;
+}
+
+.certification-item h3 {
+    color: #222;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-item .org {
+    color: var(--theme-purple);
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-item .date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-item .credential {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .certifications-grid {
+        padding: 0 1rem;
+    }
+
+    .certification-item {
+        padding: 2rem;
+    }
+
+    .certification-item h3 {
+        font-size: 1.3rem;
     }
 } 
