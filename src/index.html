@@ -50,11 +50,19 @@
             transition: transform 0.3s ease;
             text-decoration: none;
             color: #333;
-            min-width: 200px;
+            min-width: 300px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .link-card:hover {
             transform: translateY(-5px);
+        }
+
+        .link-card .content {
+            text-align: left;
         }
 
         .link-card h2 {
@@ -68,14 +76,37 @@
             font-size: 0.9rem;
         }
 
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
         @media (max-width: 480px) {
             .links {
                 gap: 1rem;
             }
 
             .link-card {
-                width: 100%;
                 min-width: 0;
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .profile-pic {
+                width: 60px;
+                height: 60px;
+            }
+
+            .link-card h2 {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .link-card p {
+                font-size: 0.8rem;
             }
         }
 
@@ -170,12 +201,18 @@
         </div>
         <div class="links">
             <a href="/orion" class="link-card">
-                <h2>Orion Koepke</h2>
-                <p>Technical Lead Software Engineer</p>
+                <div class="profile-pic" style="background: #007bff; display: flex; justify-content: center; align-items: center; color: white; font-size: 2rem;">OK</div>
+                <div class="content">
+                    <h2>Orion Koepke</h2>
+                    <p>Technical Lead Software Engineer</p>
+                </div>
             </a>
             <a href="/nicole" class="link-card">
-                <h2>Nicole Koepke</h2>
-                <p>Clinical Specialist & Sonographer</p>
+                <img src="/assets/nicole.jpg" alt="Nicole Koepke" class="profile-pic">
+                <div class="content">
+                    <h2>Nicole Koepke</h2>
+                    <p>Clinical Specialist & Sonographer</p>
+                </div>
             </a>
         </div>
     </div>
