@@ -78,6 +78,48 @@
                 min-width: 0;
             }
         }
+
+        /* Animation styles */
+        .heading-container {
+            height: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .heading {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        .heading.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .heading.inactive {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .heading-container {
+                height: 5rem;
+                margin-bottom: 5rem;
+            }
+
+            .heading {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .container {
+                padding-top: 1rem;
+            }
+        }
     </style>
     <script>
         // Get the subdomain from the hostname
@@ -93,11 +135,39 @@
         if (redirects[subdomain]) {
             window.location.href = redirects[subdomain];
         }
+
+        // Updated heading animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const orionHeading = document.getElementById('orion-heading');
+            const nicoleHeading = document.getElementById('nicole-heading');
+            const finalHeading = document.getElementById('final-heading');
+            
+            // Show Orion's heading
+            orionHeading.classList.add('active');
+            
+            // After 2 seconds, switch to Nicole's heading
+            setTimeout(() => {
+                orionHeading.classList.remove('active');
+                orionHeading.classList.add('inactive');
+                nicoleHeading.classList.add('active');
+            }, 2000);
+
+            // After another 2 seconds, switch to final heading
+            setTimeout(() => {
+                nicoleHeading.classList.remove('active');
+                nicoleHeading.classList.add('inactive');
+                finalHeading.classList.add('active');
+            }, 4000);
+        });
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Koepkes.us</h1>
+        <div class="heading-container">
+            <h1 id="orion-heading" class="heading">I'm Orion Koepke</h1>
+            <h1 id="nicole-heading" class="heading">I'm Nicole Koepke</h1>
+            <h1 id="final-heading" class="heading">We are The Koepkes</h1>
+        </div>
         <div class="links">
             <a href="/orion" class="link-card">
                 <h2>Orion Koepke</h2>
