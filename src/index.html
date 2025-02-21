@@ -79,6 +79,21 @@
             }
         }
     </style>
+    <script>
+        // Get the subdomain from the hostname
+        const subdomain = window.location.hostname.split('.')[0];
+        
+        // Map of valid subdomains to their paths
+        const redirects = {
+            'orion': '/orion',
+            'nicole': '/nicole'
+        };
+        
+        // If we have a matching subdomain, redirect to its path
+        if (redirects[subdomain]) {
+            window.location.href = redirects[subdomain];
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -88,7 +103,10 @@
                 <h2>Orion Koepke</h2>
                 <p>Technical Lead Software Engineer</p>
             </a>
-            <!-- Add more link cards here for future subpages -->
+            <a href="/nicole" class="link-card">
+                <h2>Nicole Koepke</h2>
+                <p>Clinical Specialist & Sonographer</p>
+            </a>
         </div>
     </div>
 </body>
