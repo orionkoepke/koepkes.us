@@ -367,6 +367,7 @@ input, textarea {
 
 textarea {
     min-height: 150px;
+    resize: none !important;
 }
 
 button {
