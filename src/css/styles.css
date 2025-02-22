@@ -190,12 +190,6 @@ section:nth-child(even)::after {
     z-index: 1;
 }
 
-/* Add some padding to even sections for better spacing */
-section:nth-child(even) {
-    padding: 4rem 5%;
-    margin: 4rem auto;
-}
-
 /* Responsive Design */
 @media (max-width: 1400px) {
     .hero-content h1 {
@@ -292,6 +286,7 @@ section:nth-child(even) {
 /* Sections */
 section {
     padding: 5rem 5%;
+    padding-bottom: 0rem;
     max-width: 1200px;
     margin: 2rem auto;
     position: relative;
