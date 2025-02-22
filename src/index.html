@@ -165,7 +165,8 @@
         
         // If we have a matching subdomain, redirect to its path
         if (redirects[subdomain]) {
-            window.location.href = redirects[subdomain];
+            var newHostname = window.location.hostname.replace("." + subdomain, "");
+            window.location.replace(hostname + redirects[subdomain]);
         }
 
         // Updated heading animation
