@@ -30,22 +30,12 @@ The project includes a control script at `bin/ctl.py` that handles various opera
 
 ### Start the local development server
 ```
-./bin/ctl.py serve
+./bin/ctl.py run
 ```
 
 ### Deploy the site to AWS S3
 ```
 ./bin/ctl.py deploy
-```
-
-### Build the project
-```
-./bin/ctl.py build
-```
-
-### Clean build artifacts
-```
-./bin/ctl.py clean
 ```
 
 ## Hosting
